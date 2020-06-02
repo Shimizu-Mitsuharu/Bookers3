@@ -20,10 +20,10 @@ class BookCommentsController < ApplicationController
     params.require(:book_comment). permit(:user_id, :book_id, :comment)
   end
 
-   def baria_user
+  def baria_user
     comment = BookComment.find(params[:id])
-  	unless comment.user_id == current_user.id
-  		redirect_to user_path(current_user)
-  	end
-   end
+    unless comment.user_id == current_user.id
+    redirect_to user_path(current_user)
+    end
+  end
 end
